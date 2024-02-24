@@ -1,0 +1,200 @@
+/* CSS Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  a {
+    color: inherit;
+    display: inline-block;
+  }
+  
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border: 0;
+  }
+  
+  ul,
+  ol {
+    list-style: none;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-size: 1.6rem;
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  /* End CSS Reset */
+
+  .container {
+    display: flex;
+    position: relative;
+    min-height: 100vh;
+    background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 10px 10px;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .switch-light {
+    position: absolute;
+    display: flex;
+    align-self: baseline;
+    text-align: center;
+    padding-block-start: 10rem;
+    gap: 1rem;
+    font-size: large;
+  }
+
+  .check-box {
+    display: none;
+  }
+
+  .switch-label {
+    width: 3.5rem;
+    height: 2.2rem;
+    background-color: black;
+    border-radius: 1.5rem;
+    cursor:pointer;
+    transition:0.3s ;
+  }
+  
+  .switch-label::after {
+    display: block;
+    content: "";
+    width: 1.6rem;
+    height: 1.6rem;
+    margin: 0.3rem;
+    border-radius: 50%;
+    background-color: white;
+    transition: 0.3s;
+  }
+
+  .check-box:checked + .switch-label {
+    background-color: white;
+
+  }
+
+  .check-box:checked + .switch-label::after {
+    background-color: black;
+    transform: translateX(1.1rem) ;
+  }
+
+
+  @keyframes play-light {
+    0% {
+      fill: red;
+
+    }
+    100% {
+      fill: yellow;
+    }
+    
+  }
+
+  .redish {
+    animation: play-light 0.3s infinite alternate;
+  }
+
+  .yellowish {
+    animation: play-light 0.3s infinite alternate-reverse;
+  }
+
+  .container:has(.check-box:checked) .lights {
+    display: block;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    min-width: 35rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    box-shadow: 0 0 0.5rem rgb(0,0,0,0.2);
+  }
+
+  .top {
+   height: 10rem; 
+   background-color: #e5e5f7;
+   opacity: 0.8;
+   background-image:repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #444cf755, #444cf7 );
+}
+
+.lights {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  justify-content: center;
+  }
+
+
+  .pic {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    border: 0.5rem solid #e5e5f7;
+  }
+
+  .middle {
+   text-align: center;
+   margin-top: -6rem;
+   margin-bottom: 3rem;
+   z-index: 1;
+  }
+
+  .name {
+    font-size: 2.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0.5rem;
+  }
+
+  .bio {
+    font-size: 1.6rem;
+  }
+
+  .social-links {
+    width: 2rem;
+    height: 2rem;
+    transition: 0.3s;
+  }
+
+  .social-links:hover {
+    transform: scale(1.5);
+  }
+
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    border-top: 0.1rem solid gray;
+}
+
+.column {
+    text-align: center;
+    padding: 2rem 0;
+    flex: 1;
+    
+}
+
+.profiles-name {
+    font-size: 1.2rem;
+}
+
+.col-1 {
+    border-right: 0.1rem solid gray;
+}
